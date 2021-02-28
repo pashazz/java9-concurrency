@@ -11,11 +11,18 @@ public class FileMock {
         for (int i = 0; i < size; ++i) {
             StringBuilder buffer = new StringBuilder(length);
             for (int j = 0; j < length; ++j) {
-                int randomChar = (int)(Math.random() * 128);
-                buffer.append((char) randomChar);
+                buffer.append(getRandomChar());
             }
             lines[i] = buffer.toString();
         }
+    }
+
+    private char getRandomChar() {
+        char randomChar = (char)(int)(Math.random() * 128);
+        if (!Character.isLetterOrDigit(randomChar))
+            return getRandomChar();
+        else
+            return randomChar;
     }
 
     public boolean hasMoreLines() {
