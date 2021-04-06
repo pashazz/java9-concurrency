@@ -68,7 +68,7 @@ public class Log {
         if (to_sysout){
             sysout(format, args);
         } else
-            get().info(format(format, args));
+            get().error(format(format, args));
 
  }
 

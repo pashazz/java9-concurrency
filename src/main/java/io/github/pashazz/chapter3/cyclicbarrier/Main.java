@@ -32,6 +32,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        Log.info("Sum of 7s is %s", reducer.getResult());
+        Log.info("count of 7s is %s", reducer.getResult());
     }
 }
